@@ -1,0 +1,36 @@
+<p>Hi, {{user.name}}!</p> 
+<button mat-raised-button color="primary" (click)="logout()">Logout</button>
+
+<mat-grid-list cols="3" rowHeight="200px">
+    <mat-grid-tile *ngFor="let item of items">
+        <mat-card [ngClass]="[getItemClass(item.name)]">
+            <mat-card-header>
+                <mat-card-title class="color-light">{{item.name}}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="color-light">{{item.count}}</mat-card-content>
+              <mat-card-actions>
+                <button mat-mini-fab color="accent" aria-label="Add one item" (click)="addItem(item)">
+                    <mat-icon>add</mat-icon>
+                  </button>
+                  <button mat-mini-fab color="warn" *ngIf="item.count > 0" aria-label="Delete one item" (click)="removeItem(item)">
+                    <mat-icon>remove</mat-icon>
+                  </button>
+              </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+<div>
+  <mat-grid-list cols="3"  rowHeight="200px">
+    <mat-grid-tile>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>BASKET STACK</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <div *ngFor="let basket of basketItems" [ngClass]="['basket-item', getItemClass(basket)]">
+    </div>
+  </mat-card-content>
+  </mat-card>
+</mat-grid-tile>
+</mat-grid-list>
+  </div>

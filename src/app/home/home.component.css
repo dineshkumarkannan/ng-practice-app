@@ -1,0 +1,24 @@
+.bg-red {
+  background: #e53935;
+}
+
+.bg-orange {
+  background: #fb8c00;
+}
+
+.bg-grape {
+  background: #303f9f;
+}
+
+.basket-item {
+  min-height: 12px;
+  min-width: 100px;
+}
+
+mat-card-content {
+  text-align: center;
+}
+
+.color-light {
+  color: #fff;
+}
